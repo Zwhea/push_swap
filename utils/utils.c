@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 15:44:57 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/19 19:29:39 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/19 19:32:45 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	find_lowest_nb(t_stack *stack)
 {
 	t_stack	*temp;
-	int	lowest;
+	int		lowest;
 
 	temp = stack;
 	lowest = stack->content;
@@ -31,7 +31,7 @@ int	find_lowest_nb(t_stack *stack)
 int	find_highest_nb(t_stack *stack)
 {
 	t_stack	*temp;
-	int	highest;
+	int		highest;
 
 	temp = stack;
 	highest = stack->content;
