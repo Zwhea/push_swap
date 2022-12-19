@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmosca <mmosca@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 14:04:18 by twang             #+#    #+#             */
-/*   Updated: 2022/12/17 15:31:24 by mmosca           ###   ########.fr       */
+/*   Created: 2022/12/19 22:21:51 by wangthea          #+#    #+#             */
+/*   Updated: 2022/12/19 23:20:15 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ int	ft_atoi(const char *str)
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
 		result = (result * 10) + *str++ - '0';
-		if ((result < 0 && sign == -1) || (result < 0 && sign == 1))
+		if ((result > 2147483648 && sign == -1)
+			|| (result > 2147483647 && sign == 1))
 		{
-			ft_putendl_fd("Error", 2);
+			ft_putendl_fd("Error\n", 2);
 			exit(1);
 		}
 	}

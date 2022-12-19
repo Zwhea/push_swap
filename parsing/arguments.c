@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   arguments.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmosca <mmosca@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 13:57:22 by mmosca            #+#    #+#             */
-/*   Updated: 2022/12/17 01:00:56 by mmosca           ###   ########.fr       */
+/*   Created: 2022/12/19 21:58:16 by wangthea          #+#    #+#             */
+/*   Updated: 2022/12/19 23:13:38 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	check_str_format(char **args)
+static void	check_str_format(char **av)
 {
-	uint32_t	i;
-	uint32_t	j;
+	int	i;
+	int	j;
 
-	if (!args[0])
+	if (!av[1])
 		error();
 	i = 0;
-	while (args[i])
+	while (av[i])
 	{
 		j = 0;
-		while (args[i][j])
+		while (av[i][j])
 		{
-			if (is_valid_char(args[i][j]) == false
-				|| is_only_one_sign_per_number(args[i][j], args[i][j + 1]) == false
-				|| is_number_follow_by_number_or_space(args[i][j], args[i][j + 1]) == false)
+			if (is_valid_char(av[i][j]) == false
+				|| one_sign_per_number(av[i][j], av[i][j + 1]) == false
+				|| follow_by_number_or_space(av[i][j], av[i][j + 1]) == false)
 				error();
 			j++;
 		}
@@ -35,44 +35,44 @@ static void	check_str_format(char **args)
 	}
 }
 
-static void	check_str_has_number(char **args)
+static void	check_str_has_number(char **av)
 {
-	uint32_t	i;
-	uint32_t	j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (args[i])
+	while (av[i])
 	{
 		j = 0;
-		while (args[i][j] && ft_strchr("+- ", args[i][j]))
+		while (av[i][j] && ft_strchr("+- ", av[i][j]))
 			j++;
-		if (j != 0 && args[i][j] == '\0')
+		if (j != 0 && av[i][j] == '\0')
 			error();
 		i++;
 	}
 }
 
-void	check_arguments(int32_t argc, char **args)
+void	check_arguments(int ac, char **av)
 {
-	if (argc < 2)
+	if (ac < 2)
 		error();
-	args = &args[1];
-	check_str_format(args);
-	check_str_has_number(args);
+	av = &av[1];
+	check_str_format(av);
+	check_str_has_number(av);
 }
 
-void	check_if_have_two_same_numbers_in_arguments(t_push_swap *data)
+void	check_duplicate(t_info *data)
 {
-	uint32_t	i;
-	uint32_t	j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (i < data->numbers_size)
+	while (i < data->index_size)
 	{
 		j = i + 1;
-		while (j < data->numbers_size)
+		while (j < data->index_size)
 		{
-			if (data->numbers[i] == data->numbers[j])
+			if (data->index[i] == data->index[j])
 				error();
 			j++;
 		}

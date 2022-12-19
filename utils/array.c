@@ -3,21 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   array.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmosca <mmosca@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 01:43:11 by mmosca            #+#    #+#             */
-/*   Updated: 2022/12/17 01:43:11 by mmosca           ###   ########.fr       */
+/*   Created: 2022/12/19 22:08:16 by wangthea          #+#    #+#             */
+/*   Updated: 2022/12/19 23:21:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-uint32_t	get_number_of_arguments(char **args)
+int	get_number_of_arguments(char **av)
 {
-	uint32_t	i;
+	int	i;
 
 	i = 0;
-	while (args[i])
+	while (av[i])
 		i++;
 	return (i);
+}
+
+int	find_lowest_nb(t_stack *stack)
+{
+	t_stack	*temp;
+	int		lowest;
+
+	temp = stack;
+	lowest = stack->content;
+	while (temp)
+	{
+		if (temp->content < lowest)
+			lowest = temp->content;
+		temp = temp->next;
+	}
+	return (lowest);
+}
+
+int	find_highest_nb(t_stack *stack)
+{
+	t_stack	*temp;
+	int		highest;
+
+	temp = stack;
+	highest = stack->content;
+	while (temp)
+	{
+		if (temp->content > highest)
+			highest = temp->content;
+		temp = temp->next;
+	}
+	return (highest);
 }

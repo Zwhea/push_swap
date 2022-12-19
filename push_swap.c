@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create.c                                           :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmosca <mmosca@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 02:15:24 by mmosca            #+#    #+#             */
-/*   Updated: 2022/12/17 02:15:37 by mmosca           ###   ########.fr       */
+/*   Created: 2022/12/19 22:02:27 by wangthea          #+#    #+#             */
+/*   Updated: 2022/12/19 23:22:12 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	create_stack(t_push_swap *data)
+int	main(int ac, char **av)
 {
-	uint32_t	i;
+	t_info	data;
 
-	data->stack_a = NULL;
-	i = 0;
-	while (i < data->numbers_size)
-	{
-		ft_lstadd_back(&data->stack_a, ft_lstnew(data->numbers[i]));
-		i++;
-	}
-	data->stack_a_size = i;
-	free(data->numbers);
+	check_arguments(ac, av);
+	av = &av[1];
+	av = reform(av);
+	init_array(&data, av);
+	check_duplicate(&data);
+	create_stack(&data);
+	which_algo(&data);
+	ft_lstclr(&data.stack_a, del);
+	return (0);
 }

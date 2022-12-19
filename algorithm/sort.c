@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 13:44:53 by twang             #+#    #+#             */
-/*   Updated: 2022/12/19 18:18:23 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/19 22:58:10 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	which_algo(t_info *data)
 	if (is_sorted(data) == true)
 		return ;
 	else if (data->stack_a_len <= 1)
-		ft_error();
+		error();
 	else if (data->stack_a_len == 2)
 		swap_a(data);
 	else if (data->stack_a_len == 3)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:51:02 by twang             #+#    #+#             */
-/*   Updated: 2022/12/19 18:04:40 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/19 22:27:43 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_info
 
 //-----------------------------------------------------------------------utils--
 
-void	ft_error(void);
+void	error(void);
 bool	is_valid_char(char c);
 bool	one_sign_per_number(char c1, char c2);
 bool	follow_by_number_or_space(char c1, char c2);

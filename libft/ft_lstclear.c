@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:37:18 by wangthea          #+#    #+#             */
-/*   Updated: 2022/11/18 13:46:09 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/19 22:25:27 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		ft_lstdelone(temp, del);
 		temp = next;
 	}
+	ft_lstdelone(temp, del);
 	*lst = NULL;
 }
