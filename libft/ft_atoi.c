@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:21:51 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/19 23:20:15 by wangthea         ###   ########.fr       */
+/*   Updated: 2022/12/21 12:26:22 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 		if ((result > 2147483648 && sign == -1)
 			|| (result > 2147483647 && sign == 1))
 		{
-			ft_putendl_fd("Error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			exit(1);
 		}
 	}

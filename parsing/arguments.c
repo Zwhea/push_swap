@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arguments.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 21:58:16 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/19 23:13:38 by wangthea         ###   ########.fr       */
+/*   Updated: 2022/12/21 14:01:33 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	check_str_format(char **av)
 	int	i;
 	int	j;
 
-	if (!av[1])
-		error();
+	if (!av[0])
+		return ;
 	i = 0;
 	while (av[i])
 	{
@@ -54,7 +54,7 @@ static void	check_str_has_number(char **av)
 
 void	check_arguments(int ac, char **av)
 {
-	if (ac < 2)
+	if (ac < 1)
 		error();
 	av = &av[1];
 	check_str_format(av);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 13:44:53 by twang             #+#    #+#             */
-/*   Updated: 2022/12/19 22:58:10 by wangthea         ###   ########.fr       */
+/*   Updated: 2022/12/21 13:38:13 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@ void	which_algo(t_info *data)
 	else if (data->stack_a_len == 2)
 		swap_a(data);
 	else if (data->stack_a_len == 3)
-	{
-		// show_pile(data->stack_a);
 		algo_mini(data);
-		// show_pile(data->stack_a);
-	}
 	else if (data->stack_a_len == 4 || data->stack_a_len == 5)
 	{
 		// show_pile(data->stack_a);

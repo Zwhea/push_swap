@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:02:27 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/19 23:22:12 by wangthea         ###   ########.fr       */
+/*   Updated: 2022/12/21 13:57:50 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	main(int ac, char **av)
 {
 	t_info	data;
 
+	if (av[1] == '\0')
+		return (1);
 	check_arguments(ac, av);
 	av = &av[1];
 	av = reform(av);
@@ -23,6 +25,6 @@ int	main(int ac, char **av)
 	check_duplicate(&data);
 	create_stack(&data);
 	which_algo(&data);
-	ft_lstclr(&data.stack_a, del);
+	ft_lstclr(&data.stack_a);
 	return (0);
 }

@@ -6,41 +6,27 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:21:39 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/19 23:22:32 by wangthea         ###   ########.fr       */
+/*   Updated: 2022/12/20 18:18:56 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	del(int number)
+void	ft_lstclr(t_stack **list)
 {
-	number = 0;
-	if (number == 0)
-		return ;
-}
-
-void	ft_lstclr(t_stack **list, void (*del)(int))
-{
-	t_stack	*temp;
+	t_stack	*current;
 	t_stack	*next;
 
-	if (!list || !(*del))
+	if (!list)
 		return ;
-	temp = *list;
-	while (temp)
+	current = *list;
+	while (current)
 	{
-		next = temp->next;
-		ft_lstdlone(temp, del);
-		temp = next;
+		next = current->next;
+		free(current);
+		current = next;
 	}
-	ft_lstdlone(temp, del);
-	*list = NULL;
-}
-
-void	ft_lstdlone(t_stack *list, void (*del)(int))
-{
-	del(list->content);
-	free(list);
+	list = NULL;
 }
 
 void	stack_addback(t_stack **stack, t_stack *add_new)

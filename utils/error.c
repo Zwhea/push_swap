@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:08:50 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/19 22:59:14 by wangthea         ###   ########.fr       */
+/*   Updated: 2022/12/21 11:25:26 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	error(void)
 {
-	ft_putendl_fd("Error", 2);
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }

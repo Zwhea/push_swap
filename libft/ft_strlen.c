@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:41:50 by twang             #+#    #+#             */
-/*   Updated: 2022/12/19 23:09:31 by wangthea         ###   ########.fr       */
+/*   Updated: 2022/12/20 16:10:41 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlen(const char *s)
 
 	i = 0;
 	if (!s)
-		exit(1);
+		return (0);
 	while (s[i])
 		i++;
 	return (i);

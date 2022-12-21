@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:51:02 by twang             #+#    #+#             */
-/*   Updated: 2022/12/19 22:27:43 by wangthea         ###   ########.fr       */
+/*   Updated: 2022/12/20 18:16:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,7 @@ char	**reform(char **av);
 
 t_stack	*stack_addnew(int content);
 void	stack_addback(t_stack **stack, t_stack *add_new);
-void	ft_lstclr(t_stack **list, void (*del)(int));
-void	ft_lstdlone(t_stack *list, void (*del)(int));
-void	del(int number);
+void	ft_lstclr(t_stack **list);
 
 void	init_array(t_info *data, char **av);
 void	create_stack(t_info *data);

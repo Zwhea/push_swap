@@ -6,11 +6,18 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:35:59 by twang             #+#    #+#             */
-/*   Updated: 2022/12/19 18:05:15 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/21 12:34:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack	*algo_min(t_info *data)
+{	
+	swap_a(data);
+	rotate_a(data);
+	return (data->stack_a);
+}
 
 t_stack	*algo_mini(t_info *data)
 {
@@ -27,10 +34,7 @@ t_stack	*algo_mini(t_info *data)
 	else if (data->stack_a->content < data->stack_a->next->content
 		&& data->stack_a->next->content > data->stack_a->next->next->content
 		&& data->stack_a->next->next->content > data->stack_a->content)
-	{
-		swap_a(data);
-		rotate_a(data);
-	}
+		algo_min(data);
 	else if (data->stack_a->content > data->stack_a->next->content
 		&& data->stack_a->next->content > data->stack_a->next->next->content
 		&& data->stack_a->next->next->content < data->stack_a->content)
