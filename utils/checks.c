@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 10:49:52 by twang             #+#    #+#             */
-/*   Updated: 2022/12/19 18:04:39 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/23 11:23:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,5 @@ bool	follow_by_number_or_space(char c1, char c2)
 {
 	if (ft_isdigit(c1) && ft_isdigit(c2) == false && c2 != ' ' && c2 != '\0')
 		return (false);
-	return (true);
-}
-
-bool	is_sorted(t_info *data)
-{
-	t_stack	*temp;
-
-	temp = data->stack_a;
-	while (temp && temp->next != NULL)
-	{
-		if (temp->content > temp->next->content)
-			return (false);
-		temp = temp->next;
-	}
 	return (true);
 }

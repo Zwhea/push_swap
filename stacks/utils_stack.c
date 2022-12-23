@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:21:39 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/20 18:18:56 by wangthea         ###   ########.fr       */
+/*   Updated: 2022/12/23 10:02:31 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	stack_addback(t_stack **stack, t_stack *add_new)
 	while (temp->next != NULL)
 		temp = temp->next;
 	temp->next = add_new;
+	add_new->next = NULL;
 }
 
 t_stack	*stack_addnew(int content)
@@ -54,4 +55,13 @@ t_stack	*stack_addnew(int content)
 	new->content = content;
 	new->next = NULL;
 	return (new);
+}
+
+t_stack	*stack_last(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

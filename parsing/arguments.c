@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 21:58:16 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/21 14:01:33 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/23 11:25:24 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ static void	check_str_has_number(char **av)
 
 void	check_arguments(int ac, char **av)
 {
-	if (ac < 1)
-		error();
+	if (ac < 2)
+		exit(1);
 	av = &av[1];
 	check_str_format(av);
 	check_str_has_number(av);

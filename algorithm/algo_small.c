@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:50:21 by twang             #+#    #+#             */
-/*   Updated: 2022/12/19 18:04:38 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/22 11:16:15 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	push_min(t_info *data, int low)
 	push_a_to_b(data);
 }
 
-t_stack	*algo_small(t_info *data)
+void	algo_small(t_info *data)
 {
 	int		low;
 
@@ -43,5 +43,4 @@ t_stack	*algo_small(t_info *data)
 	}
 	push_b_to_a(data);
 	push_b_to_a(data);
-	return (data->stack_a);
 }

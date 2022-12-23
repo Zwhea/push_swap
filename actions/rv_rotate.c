@@ -3,51 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   rv_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 13:16:37 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/19 22:57:48 by wangthea         ###   ########.fr       */
+/*   Created: 2022/12/23 10:47:35 by twang             #+#    #+#             */
+/*   Updated: 2022/12/23 10:48:16 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_stack	*rv_rotate(t_stack *stack)
+static void	reverse_rotate(t_stack **stack)
 {
-	t_stack	*temp;
+	t_stack	*tmp;
+	t_stack	*first;
 
-	temp = stack;
-	while (temp->next->next != NULL)
-		temp = temp->next;
-	temp->next->next = stack;
-	stack = temp->next;
-	temp->next = NULL;
-	return (stack);
+	first = (*stack);
+	tmp = stack_last(*stack);
+	while ((*stack)->next->next != NULL)
+		(*stack) = (*stack)->next;
+	(*stack)->next = NULL;
+	(*stack) = tmp;
+	tmp->next = first;
 }
 
-t_stack	*rv_rotate_a(t_info *data)
+void	rv_rotate_a(t_info *data)
 {
 	if (data->stack_a_len < 2)
-		error();
-	data->stack_a = rv_rotate(data->stack_a);
-	ft_putstr_fd("rra\n", 1);
-	return (data->stack_a);
+		return ;
+	reverse_rotate(&data->stack_a);
+	ft_putendl_fd("rra", 1);
 }
 
-t_stack	*rv_rotate_b(t_info	*data)
+void	rv_rotate_b(t_info *data)
 {
-	if (data->stack_a_len < 2)
-		error();
-	data->stack_b = rv_rotate(data->stack_b);
-	ft_putstr_fd("rrb\n", 1);
-	return (data->stack_b);
+	if (data->stack_b_len < 2)
+		return ;
+	reverse_rotate(&data->stack_b);
+	ft_putendl_fd("rrb", 1);
 }
 
-void	rv_rotate_rrr(t_info *data)
+void	rv_rotate_rr(t_info *data)
 {
-	if (data->stack_a_len < 2)
-		error();
-	data->stack_a = rv_rotate(data->stack_a);
-	data->stack_b = rv_rotate(data->stack_b);
-	ft_putstr_fd("rrr\n", 1);
+	if (data->stack_a_len < 2 || data->stack_b_len < 2)
+		return ;
+	reverse_rotate(&data->stack_a);
+	reverse_rotate(&data->stack_b);
+	ft_putendl_fd("rrr", 1);
 }
