@@ -6,12 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:02:27 by wangthea          #+#    #+#             */
-/*   Updated: 2022/12/23 16:05:46 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/23 16:26:53 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	sorting_algorithm(t_info *data)
 {
@@ -29,16 +28,6 @@ static void	sorting_algorithm(t_info *data)
 		algo_big(data, CHUNK_BIG, DOUBLE_CHUNK_BIG);
 }
 
-void	show_pile(t_stack *stack)
-{
-	while (stack)
-	{
-		printf("%d\n", stack->content);
-		stack = stack->next;
-	}
-	printf("\n");
-}
-
 int	main(int ac, char **av)
 {
 	t_info	data;
@@ -50,7 +39,6 @@ int	main(int ac, char **av)
 	check_duplicate(&data);
 	create_stack(&data);
 	sorting_algorithm(&data);
-	show_pile(data.stack_a);
 	ft_lstclr(&data.stack_a);
 	return (0);
 }

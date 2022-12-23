@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:51:02 by twang             #+#    #+#             */
-/*   Updated: 2022/12/23 15:49:33 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/23 16:27:01 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,5 @@ void	push_a_to_b(t_info *data);
 void	algo_mini(t_info *data);
 void	algo_small(t_info *data);
 void	algo_big(t_info *data, int chunk, int double_chunk);
-
-void	show_pile(t_stack *stack);
 
 #endif
