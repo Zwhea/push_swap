@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:50:21 by twang             #+#    #+#             */
-/*   Updated: 2022/12/22 11:16:15 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/23 16:05:33 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	algo_small(t_info *data)
 		algo_mini(data);
 	else
 	{
-		if (!is_sorted(data))
+		if (data->stack_a->content > data->stack_a->next->content)
 			swap_a(data);
 	}
 	push_b_to_a(data);

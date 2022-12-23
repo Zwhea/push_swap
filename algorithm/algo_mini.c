@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:35:59 by twang             #+#    #+#             */
-/*   Updated: 2022/12/22 11:11:37 by twang            ###   ########.fr       */
+/*   Updated: 2022/12/23 16:04:59 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ static void	actions_case_3(t_info *data)
 
 void	algo_mini(t_info *data)
 {
-	if (is_sorted(data) == true)
+	if (data->stack_a->content < data->stack_a->next->content
+		&& data->stack_a->next->content < data->stack_a->next->next->content)
 		return ;
-	else if (data->stack_a->content > data->stack_a->next->content
+	if (data->stack_a->content > data->stack_a->next->content
 		&& data->stack_a->next->content < data->stack_a->next->next->content
 		&& data->stack_a->next->next->content > data->stack_a->content)
 		swap_a(data);
